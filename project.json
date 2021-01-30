@@ -1,6 +1,6 @@
 {
-  "name": "queueInformation",
-  "description": "Make a DEVOPS activities",
+  "name": "getUrl",
+  "description": "getUrl",
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.9.3]",
@@ -37,13 +37,13 @@
       "ignoredFiles": []
     },
     "fileInfoCollection": [],
-    "modernBehavior": true
+    "modernBehavior": false
   },
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
     {
       "filePath": "Main.xaml",
-      "uniqueId": "515fce0b-a609-4895-9cd9-3c05d78ff366",
+      "uniqueId": "41325285-1280-44d7-a8f6-610cc12f2cdb",
       "input": [],
       "output": []
     }
