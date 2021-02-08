@@ -74,7 +74,7 @@
           <av:Size x:Key="ShapeSize">200,68.8</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Queue - Sequence" sap:VirtualizedContainerService.HintSize="808.8,1428" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence DisplayName="Queue - Sequence" sap:VirtualizedContainerService.HintSize="912.8,1428" sap2010:WorkflowViewState.IdRef="Sequence_2">
         <Sequence.Variables>
           <Variable x:TypeArguments="s:String[]" Name="v_List" />
           <Variable x:TypeArguments="x:String" Name="v_sWay" />
@@ -85,7 +85,7 @@
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Assign sap:VirtualizedContainerService.HintSize="767.2,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+        <Assign sap:VirtualizedContainerService.HintSize="871.2,60" sap2010:WorkflowViewState.IdRef="Assign_2">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[v_sWay]</OutArgument>
           </Assign.To>
@@ -93,15 +93,15 @@
             <InArgument x:TypeArguments="x:String">M</InArgument>
           </Assign.Value>
         </Assign>
-        <If Condition="[v_sWay.ToString = &quot;L&quot;]" sap:VirtualizedContainerService.HintSize="767.2,1235.2" sap2010:WorkflowViewState.IdRef="If_1">
+        <If Condition="[v_sWay.ToString = &quot;L&quot;]" sap:VirtualizedContainerService.HintSize="871.2,1235.2" sap2010:WorkflowViewState.IdRef="If_1">
           <If.Then>
-            <Sequence sap:VirtualizedContainerService.HintSize="348,544.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence sap:VirtualizedContainerService.HintSize="452,677.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Assign sap:VirtualizedContainerService.HintSize="306.4,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign sap:VirtualizedContainerService.HintSize="410.4,60" sap2010:WorkflowViewState.IdRef="Assign_1">
                 <Assign.To>
                   <OutArgument x:TypeArguments="s:String[]">[v_List]</OutArgument>
                 </Assign.To>
@@ -109,20 +109,20 @@
                   <InArgument x:TypeArguments="s:String[]">[{"Antonio", "Cátia", "Juliana", "Vitoria"}]</InArgument>
                 </Assign.Value>
               </Assign>
-              <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="306.4,352" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[v_List]">
+              <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="410.4,484.8" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[v_List]">
                 <ui:ForEach.Body>
                   <ActivityAction x:TypeArguments="x:Object">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="271.2,217.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="375.2,350.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="229.6,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;Item = &quot; + item.tostring]" />
-                      <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" DueDate="[Datetime.Now.AddDays(1)]" sap:VirtualizedContainerService.HintSize="229.6,22.4" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="RPA_Demo" Reference="brazil015_HourBalance">
+                      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="333.6,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;Item = &quot; + item.tostring]" />
+                      <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" DueDate="[Datetime.Now.AddDays(1)]" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="RPA_Demo" Reference="brazil015_HourBalance">
                         <ui:AddQueueItem.ItemInformation>
                           <InArgument x:TypeArguments="x:String" x:Key="name">[item.ToString]</InArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="OrderDate" />
@@ -135,6 +135,7 @@
                           <InArgument x:TypeArguments="x:String" x:Key="Vendas" />
                         </ui:AddQueueItem.ItemInformation>
                       </ui:AddQueueItem>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot; End Read Table..&quot;]" />
                     </Sequence>
                   </ActivityAction>
                 </ui:ForEach.Body>
@@ -168,14 +169,14 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="271.2,217.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="270.4,217.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="229.6,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[&quot;Item = &quot; + row.Item(&quot;Name&quot;).toString]" />
-                      <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" DueDate="[Datetime.Now.AddDays(1)]" sap:VirtualizedContainerService.HintSize="229.6,22.4" sap2010:WorkflowViewState.IdRef="AddQueueItem_2" Priority="Normal" QueueType="RPA_Demo" Reference="brazil015_HourBalance">
+                      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="228.8,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[&quot;Item = &quot; + row.Item(&quot;Name&quot;).toString]" />
+                      <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" DueDate="[Datetime.Now.AddDays(1)]" sap:VirtualizedContainerService.HintSize="228.8,22.4" sap2010:WorkflowViewState.IdRef="AddQueueItem_2" Priority="Normal" QueueType="RPA_Demo" Reference="brazil015_HourBalance">
                         <ui:AddQueueItem.ItemInformation>
                           <InArgument x:TypeArguments="x:String" x:Key="name">[row.Item("Name").toString]</InArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="OrderDate">[row.Item("OrderDate").toString]</InArgument>
