@@ -74,7 +74,7 @@
           <av:Size x:Key="ShapeSize">200,68.8</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Queue - Sequence" sap:VirtualizedContainerService.HintSize="836,1428" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence DisplayName="Queue - Sequence" sap:VirtualizedContainerService.HintSize="836,1560.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
         <Sequence.Variables>
           <Variable x:TypeArguments="s:String[]" Name="v_List" />
           <Variable x:TypeArguments="x:String" Name="v_sWay" />
@@ -93,6 +93,7 @@
             <InArgument x:TypeArguments="x:String">M</InArgument>
           </Assign.Value>
         </Assign>
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="794.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[String.Concat(&quot; Select method &quot;, v_sWay.tostring)]" />
         <If Condition="[v_sWay.ToString = &quot;L&quot;]" sap:VirtualizedContainerService.HintSize="794.4,1235.2" sap2010:WorkflowViewState.IdRef="If_1">
           <If.Then>
             <Sequence sap:VirtualizedContainerService.HintSize="375.2,810.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
