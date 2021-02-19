@@ -78,7 +78,7 @@ pipeline {
 	                 folderName: "${UIPATH_ORCP_FOLDER_NAME}",
 	                 environments: 'PRD',
 	                 //credentials: [$class: 'UserPassAuthenticationEntry', credentialsId: 'APIUserKey']
-	                 credentials: Token(accountName: "${UIPATH_ORCP_LOGICAL_NAME}", credentialsId: 'APIUserKey'),
+	                 credentials: Token(accountName: "${UIPATH_ORCP_LOGICAL_NAME}", credentialsId: 'UserAPIKeyPRD'),
 	                )
 	            }
 	        }
