@@ -75,7 +75,7 @@
           <av:Size x:Key="ShapeSize">200,68.8</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Queue - Sequence" sap:VirtualizedContainerService.HintSize="836,2158.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence DisplayName="Queue - Sequence" sap:VirtualizedContainerService.HintSize="836,1857.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
         <Sequence.Variables>
           <Variable x:TypeArguments="s:String[]" Name="v_List" />
           <Variable x:TypeArguments="x:String" Name="v_sWay" />
@@ -86,22 +86,6 @@
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="794.4,260.8" sap2010:WorkflowViewState.IdRef="RetryScope_1">
-          <ui:RetryScope.ActivityBody>
-            <ActivityAction>
-              <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="200,84.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-              </Sequence>
-            </ActivityAction>
-          </ui:RetryScope.ActivityBody>
-          <ui:RetryScope.Condition>
-            <ActivityFunc x:TypeArguments="x:Boolean" />
-          </ui:RetryScope.Condition>
-        </ui:RetryScope>
         <ui:LogMessage DisplayName="Start - Log Message" sap:VirtualizedContainerService.HintSize="794.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot; Start process .. &quot;]" />
         <Assign sap:VirtualizedContainerService.HintSize="794.4,60" sap2010:WorkflowViewState.IdRef="Assign_2">
           <Assign.To>
