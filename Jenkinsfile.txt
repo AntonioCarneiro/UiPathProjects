@@ -1,9 +1,10 @@
 pipeline {
- agent any
+            agent any
     	        // Environment Variables
 	        environment {
 	        MAJOR = '1'
 	        MINOR = '0'
+
 	        //Orchestrator Services
 	        UIPATH_ORCH_URL = "https://cloud.uipath.com/"
 	        UIPATH_ORCH_LOGICAL_NAME = "CarneiroUiPathi"
@@ -14,8 +15,7 @@ pipeline {
 
 	    stages {
 	
-
-	        // Printing Basic Information
+                // Printing Basic Information
 	        stage('Preparing'){
 	            steps {
 	                echo "Jenkins Home ${env.JENKINS_HOME}"
@@ -103,6 +103,4 @@ pipeline {
 	            cleanWs()
 	        }
 	    }
-	
-
-	}
+       }
