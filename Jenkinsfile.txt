@@ -12,10 +12,10 @@ pipeline {
 	        UIPATH_ORCH_FOLDER_NAME = "Default"
 	    }
 	
-
 	    stages {
 	
-                // Printing Basic Information
+
+	        // Printing Basic Information
 	        stage('Preparing'){
 	            steps {
 	                echo "Jenkins Home ${env.JENKINS_HOME}"
@@ -103,4 +103,6 @@ pipeline {
 	            cleanWs()
 	        }
 	    }
-       }
+	
+
+	}
