@@ -10,6 +10,13 @@ pipeline {
 	        UIPATH_ORCH_LOGICAL_NAME = "CarneiroUiPathi"
 	        UIPATH_ORCH_TENANT_NAME = "CertificateUiPath"
 	        UIPATH_ORCH_FOLDER_NAME = "Default"
+
+	        // Orchestrator Services PRD
+	        UIPATH_ORCP_URL = "https://cloud.uipath.com/"
+	        UIPATH_ORCP_LOGICAL_NAME = "testdev_cloud"
+	        UIPATH_ORCP_TENANT_NAME = "Development"
+	        UIPATH_ORCP_FOLDER_NAME = "Default"
+
 	    }
 	
 	    stages {
@@ -66,12 +73,12 @@ pipeline {
 	                echo "Deploying ${BRANCH_NAME} to Production"
 	                UiPathDeploy (
 	                 packagePath: "Output\\${env.BUILD_NUMBER}",
-	                 orchestratorAddress: "${UIPATH_ORCH_URL}",
-	                 orchestratorTenant: "${UIPATH_ORCH_TENANT_NAME}",
-	                 folderName: "${UIPATH_ORCH_FOLDER_NAME}",
+	                 orchestratorAddress: "${UIPATH_ORCP_URL}",
+	                 orchestratorTenant: "${UIPATH_ORCP_TENANT_NAME}",
+	                 folderName: "${UIPATH_ORCP_FOLDER_NAME}",
 	                 environments: 'PRD',
 	                 //credentials: [$class: 'UserPassAuthenticationEntry', credentialsId: 'APIUserKey']
-	                 credentials: Token(accountName: "${UIPATH_ORCH_LOGICAL_NAME}", credentialsId: 'APIUserKey'),
+	                 credentials: Token(accountName: "${UIPATH_ORCP_LOGICAL_NAME}", credentialsId: 'APIUserKey'),
 	                )
 	            }
 	        }
