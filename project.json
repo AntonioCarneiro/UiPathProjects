@@ -1,6 +1,6 @@
 {
   "name": "queueInformation",
-  "description": "queueInformation",
+  "description": "Make a DEVOPS activities",
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.9.3]",

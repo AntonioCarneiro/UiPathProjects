@@ -75,7 +75,7 @@
           <av:Size x:Key="ShapeSize">200,68.8</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Queue - Sequence" sap:VirtualizedContainerService.HintSize="836,1857.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence DisplayName="Queue - Sequence" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
         <Sequence.Variables>
           <Variable x:TypeArguments="s:String[]" Name="v_List" />
           <Variable x:TypeArguments="x:String" Name="v_sWay" />
