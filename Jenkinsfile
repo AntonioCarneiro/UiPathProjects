@@ -5,7 +5,7 @@ pipeline {
 	        MAJOR = '1'
 	        MINOR = '0'
 
-	        //Orchestrator Services
+	        // Orchestrator Services UAT
 	        UIPATH_ORCH_URL = "https://cloud.uipath.com/"
 	        UIPATH_ORCH_LOGICAL_NAME = "CarneiroUiPathi"
 	        UIPATH_ORCH_TENANT_NAME = "CertificateUiPath"
@@ -18,9 +18,7 @@ pipeline {
 	        UIPATH_ORCP_FOLDER_NAME = "Default"
 
 	        UIPATH_ORCA_EMAIL = "carneiro.ac@gmail.com"
-
 	    }
-	
 	    stages {
 	        // Printing Basic Information
 	        stage('Preparing'){
@@ -33,7 +31,6 @@ pipeline {
 	                checkout scm
 	            }
 	        }
-
 	         // Build Stages
 	        stage('Build') {
 	            steps {
@@ -52,8 +49,7 @@ pipeline {
 	                echo 'Testing..the workflow here...'
 	            }
 	        }
-
-	         // Deploy Stages
+            // Deploy Stages
 	        stage('Deploy to UAT') {
 	            steps {
 	                echo "Deploying ${BRANCH_NAME} to UAT "
@@ -68,8 +64,7 @@ pipeline {
 	                )
 	            }
 	        }
-
-	         // Deploy to Production Step
+            // Deploy to Production Step
 	        stage('Deploy to Production') {
 	            steps {
 	                echo "Deploying ${BRANCH_NAME} to Production"
@@ -85,8 +80,6 @@ pipeline {
 	            }
 	        }
 	    }
-	
-
 	    // Options
 	    options {
 	        // Timeout for pipeline
