@@ -17,6 +17,8 @@ pipeline {
 	        UIPATH_ORCP_TENANT_NAME = "Development"
 	        UIPATH_ORCP_FOLDER_NAME = "Default"
 
+	        UIPATH_ORCA_EMAIL = "carneiro.ac@gmail.com"
+
 	    }
 	
 	    stages {
@@ -47,7 +49,7 @@ pipeline {
 	         // Test Stages
 	        stage('Test') {
 	            steps {
-	                echo 'Testing..the workflow...'
+	                echo 'Testing..the workflow here...'
 	            }
 	        }
 
@@ -96,6 +98,7 @@ pipeline {
 	    post {
 	        success {
 	            echo 'Deployment has been completed!'
+	            mailUser("${UIPATH_ORCA_EMAIL}", "Finished")
 	        }
 	        failure {
 	          echo "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.JOB_DISPLAY_URL})"
