@@ -93,21 +93,22 @@ pipeline {
 	            echo 'Deployment has been completed!'
 	            mailUser("${UIPATH_ORCA_EMAIL}", "Finished")
 
-	            err = caughtError
-                currentBuild.result = "FAILURE"
+	            ///err = caughtError
+                //currentBuild.result = "FAILURE"
                 String recipient = "${UIPATH_ORCA_EMAIL}"
                 mail subject: "${env.JOB_NAME} (${env.BUILD_NUMBER}) failed",
                         body: "It appears that ${env.BRANCH_NAME} is failing, somebody should do something about that",
                           to: recipient,
                      replyTo: recipient,
                         from: 'noreply@ci.jenkins.io'
-               (currentBuild.result != "ABORTED") && node("master") {
+               //(currentBuild.result != "ABORTED") && node("master") {
                    // Send e-mail notifications for failed or unstable builds.
                    // currentBuild.result must be non-null for this step to work.
                   step([$class: 'Mailer',
                      notifyEveryUnstableBuild: true,
                                    recipients: "${UIPATH_ORCA_EMAIL}",
-                            sendToIndividuals: true])}
+                            sendToIndividuals: true])
+              //}
 	        }
 	        failure {
 	          echo "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.JOB_DISPLAY_URL})"
