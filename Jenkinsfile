@@ -95,11 +95,11 @@ pipeline {
 
 	            ///err = caughtError
                 //currentBuild.result = "FAILURE"
-                String recipient = "${UIPATH_ORCA_EMAIL}"
+                //String recipient = "${UIPATH_ORCA_EMAIL}"
                 mail subject: "${env.JOB_NAME} (${env.BUILD_NUMBER}) failed",
                         body: "It appears that ${env.BRANCH_NAME} is failing, somebody should do something about that",
-                          to: recipient,
-                     replyTo: recipient,
+                          to: "${UIPATH_ORCA_EMAIL}",
+                     replyTo: "${UIPATH_ORCA_EMAIL}",
                         from: 'noreply@ci.jenkins.io'
                //(currentBuild.result != "ABORTED") && node("master") {
                    // Send e-mail notifications for failed or unstable builds.
